@@ -1,0 +1,4 @@
+externalId,customerId,amount,currency,type,createdAt
+tx-001,c-10,120.50,BRL,PURCHASE,2026-01-27T10:20:00
+tx-002,c-11,-5,BRL,REFUND,2026-01-27T10:21:00
+tx-003,c-12,9.99,USD,PURCHASE,2026-01-27T10:22:00

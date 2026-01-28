@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: spring-batch-postgres
+    environment:
+      POSTGRES_DB: spring_batch
+      POSTGRES_USER: sb_user
+      POSTGRES_PASSWORD: sb_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - sb_postgres_data:/var/lib/postgresql/data
+      - ./src/main/resources/migrations/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+
+volumes:
+  sb_postgres_data:
