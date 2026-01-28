@@ -9,5 +9,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 public class BatchInputProperties {
 
-    private String inputFile = "classpath:csv/transactions_2026-01-27.csv";
+    private String inputFile = "classpath:csv/cash_transactions.csv";
 }

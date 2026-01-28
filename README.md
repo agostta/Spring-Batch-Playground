@@ -2,10 +2,10 @@
 
 ## Requirements
 - Java 25
-- Docker (for Postgres)
+- Docker (for Redis and Postgres)
 
 ## Database (Docker Compose)
-Start Postgres locally:
+Start Docker services locally:
 
 ```sh
 docker compose up -d
@@ -30,4 +30,12 @@ Enriches pending customer addresses via an external ZIP code lookup service.
 Run the job
 ```sh
 ./gradlew bootRun --args="--spring.batch.job.name=enrichCustomerAddressJob"
+```
+
+### Credit Card EUR to Redis Job
+Reads credit card transactions, keeps only EUR, and writes to Redis.
+![creditCardEurToRedisJob](src/main/resources/diagrams/credit-card-eur-redis-job.png)
+Run the job
+```sh
+./gradlew bootRun --args="--spring.batch.job.name=creditCardEurToRedisJob"
 ```
